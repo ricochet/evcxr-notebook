@@ -81,7 +81,7 @@ export DEBIAN_FRONTEND=noninteractive
 if ! dpkg -s curl ca-certificates lldb python3-minimal gcc libc6-dev > /dev/null 2>&1; then
     apt_get_update_if_needed
     apt-get -y install --no-install-recommends curl ca-certificates gcc libc6-dev
-    apt-get -y install lldb python3-minimal libpython3.?
+    apt-get -y install lldb cmake python3-minimal libpython3.?
 fi
 
 # Install Rust
@@ -116,7 +116,9 @@ if [[ "\${PATH}" != *"\${CARGO_HOME}/bin"* ]]; then export PATH="\${PATH}:\${CAR
 EOF
 )"
 
+updaterc "export PATH=\"\${$HOME}/.local/bin:\${PATH}\""
+
 # Install cargo crates
-cargo install evcxr_jupyter && evcxr_jupyter --install
+${CARGO_HOME}/bin/cargo install evcxr_jupyter && ${CARGO_HOME}/bin/evcxr_jupyter --install
 
 echo "Done!"

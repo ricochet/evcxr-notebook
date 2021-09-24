@@ -51,6 +51,7 @@ RUN echo "USERNAME: $USERNAME, USER_UID: $USER_UID, USER_GID: $USER_GID" \
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
 # [Optional] Set the default user. Omit if you want to keep the default as root.
-USER $USERNAME
+RUN chown -R $USERNAME /home/vscode/.local
+RUN ls -ltra /home/vscode/.local
 
 RUN python3 -m pip install ipykernel && python3 -m ipykernel install --user
