@@ -52,3 +52,5 @@ RUN echo "USERNAME: $USERNAME, USER_UID: $USER_UID, USER_GID: $USER_GID" \
 
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
+
+RUN python3 -m pip install ipykernel && python3 -m ipykernel install --user

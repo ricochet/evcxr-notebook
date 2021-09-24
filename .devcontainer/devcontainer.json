@@ -65,9 +65,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// && cargo install evcxr_jupyter && evcxr_jupyter --install
-	// "a": "sudo python3 -m pip install ipykernel && python3 -m ipykernel install --user",
-	// "postCreateCommand": "",
+	// "postCreateCommand": "python3 -m pip install ipykernel && python3 -m ipykernel install --user",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
