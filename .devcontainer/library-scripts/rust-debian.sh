@@ -116,8 +116,7 @@ if [[ "\${PATH}" != *"\${CARGO_HOME}/bin"* ]]; then export PATH="\${PATH}:\${CAR
 EOF
 )"
 
-updaterc "export PATH=\"\${$HOME}/.local/bin:\${PATH}\""
-
+echo "Installing crates"
 # Install cargo crates
 ${CARGO_HOME}/bin/cargo install evcxr_jupyter && ${CARGO_HOME}/bin/evcxr_jupyter --install
 
